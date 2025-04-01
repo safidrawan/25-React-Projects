@@ -21,6 +21,7 @@ function Accordion() {
 
   function toggleMultiSelection() {
     setIsMultiSelectionOn(!isMultiSelectionOn);
+    setActiveItems([]);
   }
 
   const elements = data.map((item) => {
@@ -34,19 +35,16 @@ function Accordion() {
         >
           <span className="w-11/12 text-left">{item.title}</span>
           <span
-            className={`absolute top-1 right-0 transform transition-transform duration-
-              400 ${
-                activeItems.includes(item.id) ? "rotate-180"
-                  : ""
-              }`}
+            className={`absolute top-1 right-0 transform transition-transform duration-300 ${
+              activeItems.includes(item.id) ? "rotate-180" : ""
+            }`}
           >
             ▼
           </span>
         </button>
         <div
-          className={`text-lg rounded-b-lg flex justify-between w-full overflow-hidden transition-all duration-400 ${
-            activeItems.includes(item.id) ? "max-h-96"
-              : "max-h-0"
+          className={`text-lg rounded-b-lg flex justify-between w-full overflow-hidden transition-all duration-300 ${
+            activeItems.includes(item.id) ? "max-h-96" : "max-h-0"
           } `}
         >
           {item.content}
@@ -57,11 +55,14 @@ function Accordion() {
 
   return (
     <div className="max-w-5xl mx-auto">
+      <h1 className="text-5xl font-bold text-center p-6">Accordion</h1>
       <button
         onClick={toggleMultiSelection}
-        className="text-2xl bg-blue-500 px-5 py-3 rounded-lg m-4 text-white cursor-pointer"
+        className="text-2xl bg-blue-500 px-5 py-3 rounded-lg m-4 text-white cursor-pointer block mx-auto"
       >
-        Multi Selection Mode: {isMultiSelectionOn ? "Yes" : "No"}
+        {isMultiSelectionOn
+          ? "Disable Multi Selection Mode"
+          : "Enable Multi Selection Mode"}
       </button>
       {elements}
     </div>
