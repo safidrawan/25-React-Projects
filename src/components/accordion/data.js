@@ -50,5 +50,5 @@ const data = [
       content: "Controlled components have form data handled by React state, while uncontrolled components let the DOM handle the form data directly via refs."
     }
   ];
-
+  
   export default data;

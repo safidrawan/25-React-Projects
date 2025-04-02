@@ -28,7 +28,7 @@ function Accordion() {
     return (
       <div key={item.id} className="p-2 mt-4 shadow-md">
         <button
-          className="text-2xl cursor-pointer relative rounded-t-lg flex justify-between w-full p-2"
+          className="text-2xl relative rounded-t-lg flex justify-between w-full p-2"
           onClick={() => {
             handleActive(item.id);
           }}
