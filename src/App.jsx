@@ -10,7 +10,7 @@ function App() {
       <Accordion />
       <RandomColor />
       <StarRating />
-      <Slider url={"https://picsum.photos/v2/list"} limit={10} />
+      <Slider url={"https://picsum.photos/v2/list"} page={1} limit={10} />
     </>
   );
 }
