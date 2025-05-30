@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 function StarRating({ noOfStars = 5 }) {
@@ -24,7 +24,7 @@ function StarRating({ noOfStars = 5 }) {
         return (
           <FaStar
             key={index}
-            className={index <= (hover||rating) ? "active":""}
+            className={index <= (hover||rating) ? "active drop-shadow-sm/50":""}
             onClick={() => {
               handleClick(index);
             }}
